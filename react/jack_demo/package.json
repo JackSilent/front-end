@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./src/config/webpack.config.js --mode development",
-    "dev": ""
+    "dev": "webpack-dev-server --config ./src/config/webpack.config.js --watch --hot --inline --mode development"
   },
   "author": "",
   "license": "ISC",

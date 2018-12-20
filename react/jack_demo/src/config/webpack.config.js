@@ -5,7 +5,7 @@ module.exports = {
         'index':'./src/js/index.js'
     },
     output: {
-        path: path.resolve(__dirname, './build'),
+        path: path.resolve(__dirname, '../../dist/'),
         filename: '[name].bundle.js'
     },
     module: {
@@ -23,5 +23,12 @@ module.exports = {
                 test: /\.(png|jpg)$/,
                 loader: 'url?limit=25000'
             }]
+    },
+    devServer: {
+        historyApiFallback: true,
+        inline:true,
+        contentBase: path.join(__dirname, "../../dist"),
+        // compress: true,
+        port: 9000
     }
 }
