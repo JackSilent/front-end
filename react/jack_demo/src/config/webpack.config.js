@@ -12,10 +12,19 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                options: {
+                    "plugins": [
+                        ["import", {
+                            "libraryName": "antd",
+                            "libraryDirectory": "es",
+                            "style": "css" // `style: true` 会加载 less 文件
+                        }]
+                    ]
+                }
             }, {
                 test: /\.css$/,
-                loader: 'style!css'
+                loader: 'style-loader!css-loader'
             }, {
                 test: /\.less$/,
                 loader: 'style!css!less'
